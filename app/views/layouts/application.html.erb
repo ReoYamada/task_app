@@ -9,8 +9,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <header>
+    <h1>スケジュール管理アプリ</h1>
+  </header>
+    <%=flash[:notice] %>
   <body>
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
+  <footer>
+    <h2><%= l Date.today %> スケジュール件数<%=Post.all.count%></h2>
+  </footer>
 </html>

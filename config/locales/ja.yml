@@ -1,0 +1,24 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d "
+  date:
+    formats:
+      default: "%Y年%-m月%-d日"
+  errors:
+    format:
+      "%{message}"
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "タイトルが空白です"
+            overview:
+              blank: "内容がありません"
+            start_day:
+              blank: "開始日が入力されていません"
+            end_day: 
+              blank: "終了日が入力されていません"
+
