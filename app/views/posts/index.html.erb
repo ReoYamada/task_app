@@ -1,0 +1,27 @@
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>スケジュール名</th>
+    <th>開始日</th>
+    <th>終了日</th>
+    <th>時間帯</th>
+    <th colspan="3">機能</th>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.id %></td>
+    <td><%= post.title %></td>
+    <td><%= l post.start_day %></td>
+    <td><%= l post.end_day %></td>
+    <td><%= post.time_zone %></td>
+    <td><%= link_to "詳細", post %></td>
+    <td><%= link_to "編集", [:edit, post] %></td>
+    <td><%= link_to "削除", post, method: :delete, data: {confirm:"本当に削除しますか？"}%></td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "スケジュール登録", :new_post %>
+
+<%=link_to '開始日が近い順', sort_new_path(new: 'true') %>

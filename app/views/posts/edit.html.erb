@@ -1,0 +1,28 @@
+<h2>スケジュール編集</h2>
+<% @post.errors.full_messages.each do |error|%>
+  <div class="error_message">
+    <a><%= error %></a>
+  </div>
+<%end%>
+<%=form_with model: @post do |f| %>
+<table>
+  <tr>
+    <th>タイトル</th>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr>
+    <th>開始</th>
+    <td><%= f.date_field :start_day %></td>
+  </tr>
+  <tr>
+    <th>終了</th>
+    <td><%= f.date_field :end_day %></td>
+  </tr>
+  <tr>
+    <th>内容</th>
+    <td><%= f.text_area :overview %></td>
+  </tr>
+</table>
+<%= f.submit "登録する"%>
+<% end %>
+<%= link_to "スケジュール一覧", :posts %>
